@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/shared/PageHeader";
+import { RecentlyAddedStrip } from "@/components/tools/RecentlyAddedStrip";
 import { ToolsDirectory } from "@/components/tools/ToolsDirectory";
 import { siteConfig, totalToolCount } from "@/lib/constants";
 
@@ -24,7 +25,12 @@ export default function ToolsPage() {
         title="All tools, all free"
         description={`${totalToolCount} AI, SEO, developer, image and PDF tools — filter by category or search from the nav.`}
       />
-      <div className="container pb-20 pt-8 sm:pb-28">
+
+      <div className="pb-12 pt-8">
+        <RecentlyAddedStrip />
+      </div>
+
+      <div className="container pb-20 sm:pb-28">
         <ToolsDirectory />
       </div>
     </>
